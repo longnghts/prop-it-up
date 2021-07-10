@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
+import { exp } from 'prelude-ls';
+import React from 'react';
 
-class PersonCard extends Component {
-    constructor(props){
-        super(props);
-        this.state = {ageUp: this.props.age}
-    }
-    render() {
-        return(
-            <div>
-                <h1>{this.props.lastName}, {this.props.firstName}</h1>
-                <p>Age: {this.state.ageUp}</p>
-                <p>Hair Color: {this.props.hairColor}</p>
-                <button onClick={() => this.setState({ageUp: this.state.ageUp + 1})}>Birthday button for {this.props.firstName} {this.props.lastName}</button>
-            </div>
-        );
-    }
+const PersonCard = props => {
+    return(
+        <div>
+            <h1>{props.lastName}, {props.firstName}</h1>
+            <p>Age: {props.age}</p>
+            <p>Hair Color: {props.hairColor}</p>
+            <hr />
+        </div>
+    );
 }
 
-export default PersonCard; 
+export default PersonCard;
